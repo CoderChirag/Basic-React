@@ -1,25 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import CustomText from "./CustomText";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [name, setName] = useState("Dikshan");
+    let num = 1;
+    // setName("Dikshant");
+    // const arr = useState("Dikshan");
+    // const name = arr[0];
+    // const setName = arr[1];
+    return(
+        <React.Fragment>
+            {name === "Dikshan" ? num=2 : null}
+            <h1 onClick={() => setName("Dikshant")}>Print Dikshant</h1>
+            <CustomText name="Chirag" color="red" num={num}/>
+            {name === "Dikshant" ? <CustomText name="Dikshant" color="blue"/> : null}
+        </React.Fragment>
+    );
+};
 
 export default App;
